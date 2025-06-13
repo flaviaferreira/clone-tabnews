@@ -14,7 +14,6 @@ describe("POST - Migrations", () => {
     expect(response1.status).toBe(201);
 
     const responseBody1 = await response1.json();
-    console.log(responseBody1);
     expect(Array.isArray(responseBody1)).toBe(true);
     expect(responseBody1.length).toBeGreaterThan(0);
 
@@ -24,7 +23,6 @@ describe("POST - Migrations", () => {
     expect(response2.status).toBe(200);
 
     const responseBody2 = await response2.json();
-    console.log(responseBody2);
     expect(Array.isArray(responseBody2)).toBe(true);
     expect(responseBody2.length).toBe(0);
   });
