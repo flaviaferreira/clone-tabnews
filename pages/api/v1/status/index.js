@@ -7,7 +7,7 @@ async function status(request, response) {
   const maxConnectionsResult = await database.query("SHOW max_connections;");
   const databaseName = process.env.POSTGRES_DB;
   const openedConnectionsResult = await database.query({
-    text: `SELECT COUNT(*)::int AS count FROM pg_stat_activity WHERE datname = $1 and state = 'active';`,
+    text: `SELECT COUNT(*)::int AS count FROM pg_stat_activity WHERE datname = $1;`,
     values: [databaseName],
   });
 
