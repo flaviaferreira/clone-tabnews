@@ -11,7 +11,7 @@ async function query(queryString) {
     console.error("error", error);
     throw error;
   } finally {
-    await client.end();
+    await client?.end();
   }
 }
 
